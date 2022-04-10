@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
-namespace xadrez_console.Tabuleiro
+namespace tabuleiro
 {
     public class Tabuleiro
     {
@@ -17,6 +13,11 @@ namespace xadrez_console.Tabuleiro
             Linhas = linhas;
             Colunas = colunas;
             Pecas = new Peca[Linhas,Colunas];
+        }
+
+        public Peca peca(int linha, int coluna)
+        {
+            return Pecas[linha,coluna];
         }
     }
 }
