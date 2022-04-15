@@ -1,13 +1,26 @@
 ﻿using tabuleiro;
 using xadrez;
-Console.WriteLine("Hello World");
 
-PosicaoXadrez pos = new PosicaoXadrez('a', 1);
-Console.WriteLine(pos);
-Console.WriteLine(pos.ToPosition());
-PosicaoXadrez pos1 = new PosicaoXadrez('c', 7);
-Console.WriteLine(pos1);
-Console.WriteLine(pos1.ToPosition());
+try
+{
+    Tabuleiro tab = new Tabuleiro(8, 8);
+
+    tab.ColocarPeca(new Torre(tab, Cor.Preto), new Posicao(0, 0));
+    tab.ColocarPeca(new Torre(tab, Cor.Preto), new Posicao(1, 3));
+    tab.ColocarPeca(new Rei(tab, Cor.Preto), new Posicao(0, 2));
+
+    tab.ColocarPeca(new Torre(tab, Cor.Branco), new Posicao(7, 0));
+    tab.ColocarPeca(new Torre(tab, Cor.Branco), new Posicao(6, 3));
+    tab.ColocarPeca(new Rei(tab, Cor.Branco), new Posicao(5, 2));
+
+    Tela.ImprimirTabuleiro(tab);
+
+}catch (TabuleiroException ex)
+{
+    Console.WriteLine(ex.Message);
+}
+
+
 
 //Posicao p;
 //p = new Posicao(3, 4);
