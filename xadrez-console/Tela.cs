@@ -1,4 +1,4 @@
-﻿using tabuleiro;
+﻿using xadrez;
 
 namespace tabuleiro
 {
@@ -12,13 +12,13 @@ namespace tabuleiro
                 Console.Write(8-i+" ");
                 for (int j = 0; j < Tab.Linhas; j++)
                 {
-                    if(Tab.peca(i,j) == null)
+                    if(Tab.Peca(i,j) == null)
                     {
                         Console.Write("- ");
                     }
                     else
                     {
-                        ImprimirPeca(Tab.peca(i, j));
+                        ImprimirPeca(Tab.Peca(i, j));
                         Console.Write(" ");
                     } 
                 }
@@ -28,6 +28,13 @@ namespace tabuleiro
             Console.WriteLine("  A B C D E F G H");
         }
 
+        public static PosicaoXadrez LerPosicaoXadrez()
+        {
+            string s = Console.ReadLine();
+            char coluna = s[0];
+            int linha = int.Parse(s[1] + "");
+            return new PosicaoXadrez(coluna, linha);
+        }
         public static void ImprimirPeca(Peca peca)
         {
             if(peca.Cor == Cor.Branco)
