@@ -9,10 +9,8 @@ try
         try
         {
             Console.Clear();
-            Tela.ImprimirTabuleiro(partida.Tab);
-            Console.WriteLine();
-            Console.WriteLine("Turno: " + partida.Turno);
-            Console.WriteLine("Aguardando Jogada do " + partida.JogadorAtual);
+            Tela.ImprimirPartida(partida);
+            
             Console.Write("Origem: ");
             Posicao origem = Tela.LerPosicaoXadrez().ToPosicao();
             partida.ValidarPosicaoDeOrigem(origem);
