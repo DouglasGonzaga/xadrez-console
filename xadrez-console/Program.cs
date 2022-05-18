@@ -30,6 +30,8 @@ try
         }
         
     }
+    Console.Clear();
+    Tela.ImprimirPartida(partida);
 
 }catch (TabuleiroException ex)
 {
